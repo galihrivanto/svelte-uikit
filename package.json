@@ -15,6 +15,114 @@
     ".": {
       "types": "./dist/index.d.ts",
       "svelte": "./dist/index.js"
+    },
+    "./alert": {
+      "types": "./dist/alert.d.ts",
+      "svelte": "./dist/alert.js"
+    },
+    "./alert-dialog": {
+      "types": "./dist/alert-dialog.d.ts",
+      "svelte": "./dist/alert-dialog.js"
+    },
+    "./badge": {
+      "types": "./dist/badge.d.ts",
+      "svelte": "./dist/badge.js"
+    },
+    "./button": {
+      "types": "./dist/button.d.ts",
+      "svelte": "./dist/button.js"
+    },
+    "./calendar": {
+      "types": "./dist/calendar.d.ts",
+      "svelte": "./dist/calendar.js"
+    },
+    "./card": {
+      "types": "./dist/card.d.ts",
+      "svelte": "./dist/card.js"
+    },
+    "./carousel": {
+      "types": "./dist/carousel.d.ts",
+      "svelte": "./dist/carousel.js"
+    },
+    "./checkbox": {
+      "types": "./dist/checkbox.d.ts",
+      "svelte": "./dist/checkbox.js"
+    },
+    "./collapsible": {
+      "types": "./dist/collapsible.d.ts",
+      "svelte": "./dist/collapsible.js"
+    },
+    "./command": {
+      "types": "./dist/command.d.ts",
+      "svelte": "./dist/command.js"
+    },
+    "./dialog": {
+      "types": "./dist/dialog.d.ts",
+      "svelte": "./dist/dialog.js"
+    },
+    "./form": {
+      "types": "./dist/form.d.ts",
+      "svelte": "./dist/form.js"
+    },
+    "./input": {
+      "types": "./dist/input.d.ts",
+      "svelte": "./dist/input.js"
+    },
+    "./label": {
+      "types": "./dist/label.d.ts",
+      "svelte": "./dist/label.js"
+    },
+    "./menubar": {
+      "types": "./dist/menubar.d.ts",
+      "svelte": "./dist/menubar.js"
+    },
+    "./popover": {
+      "types": "./dist/popover.d.ts",
+      "svelte": "./dist/popover.js"
+    },
+    "./progress": {
+      "types": "./dist/progress.d.ts",
+      "svelte": "./dist/progress.js"
+    },
+    "./radio-group": {
+      "types": "./dist/radio-group.d.ts",
+      "svelte": "./dist/radio-group.js"
+    },
+    "./select": {
+      "types": "./dist/select.d.ts",
+      "svelte": "./dist/select.js"
+    },
+    "./sheet": {
+      "types": "./dist/sheet.d.ts",
+      "svelte": "./dist/sheet.js"
+    },
+    "./skeleton": {
+      "types": "./dist/skeleton.d.ts",
+      "svelte": "./dist/skeleton.js"
+    },
+    "./slider": {
+      "types": "./dist/slider.d.ts",
+      "svelte": "./dist/slider.js"
+    },
+    "./switch": {
+      "types": "./dist/switch.d.ts",
+      "svelte": "./dist/switch.js"
+    },
+    "./tabs": {
+      "types": "./dist/tabs.d.ts",
+      "svelte": "./dist/tabs.js"
+    },
+    "./textarea": {
+      "types": "./dist/textarea.d.ts",
+      "svelte": "./dist/textarea.js"
+    },
+    "./toast": {
+      "types": "./dist/toast.d.ts",
+      "svelte": "./dist/toast.js"
+    },
+    "./tooltip": {
+      "types": "./dist/tooltip.d.ts",
+      "svelte": "./dist/tooltip.js"
     }
   },
   "files": [
