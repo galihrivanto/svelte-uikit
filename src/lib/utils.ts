@@ -2,6 +2,7 @@ import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { cubicOut } from "svelte/easing";
 import type { TransitionConfig } from "svelte/transition";
+import { boolean } from "zod";
 
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
@@ -60,3 +61,7 @@ export const flyAndScale = (
         easing: cubicOut
     };
 };
+
+export function classIf(cond: boolean, className: string): string {
+    return cond? className : ""
+}

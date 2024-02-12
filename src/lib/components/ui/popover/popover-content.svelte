@@ -13,7 +13,7 @@
 	{transition}
 	{transitionConfig}
 	class={cn(
-		"z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none",
+		"z-50 p-2 shadow dropdown-content bg-base-100 text-base-content rounded-box w-52",
 		className
 	)}
 	{...$$restProps}

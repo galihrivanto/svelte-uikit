@@ -1,7 +1,13 @@
 <script lang="ts">
 	import { Select as SelectPrimitive } from "bits-ui";
 	import { ChevronDown } from "lucide-svelte";
-	import { cn } from "$lib/utils";
+	import { cn, classIf } from "$lib/utils";
+	import { Color, type ColorStrings } from '$lib/enums/color.enum';
+	import { Size, type SizeStrings } from '$lib/enums/size.enum';
+
+	export let color: Color | ColorStrings = Color.Neutral;
+	export let size: Size | SizeStrings = Size.Md;
+	export let bordered: boolean = false;
 
 	type $$Props = SelectPrimitive.TriggerProps;
 	type $$Events = SelectPrimitive.TriggerEvents;
@@ -12,8 +18,21 @@
 
 <SelectPrimitive.Trigger
 	class={cn(
-		"flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
-		className
+		"select items-center",
+		className,
+		classIf(color == Color.Neutral, "select-neutral"),
+		classIf(color == Color.Primary, "select-primary"),
+		classIf(color == Color.Secondary, "select-secondary"),
+		classIf(color == Color.Accent, "select-accent"),
+		classIf(color == Color.Success, "select-success"),
+		classIf(color == Color.Info, "select-info"),
+		classIf(color == Color.Warning, "select-warning"),
+		classIf(color == Color.Error, "select-error"),
+		classIf(size == Size.Xs, "select-xs"),
+		classIf(size == Size.Sm, "select-sm"),
+		classIf(size == Size.Md, "select-md"),
+		classIf(size == Size.Lg, "select-lg"),
+		classIf(bordered, "select-bordered")
 	)}
 	{...$$restProps}
 	let:builder
@@ -21,7 +40,4 @@
 	on:keydown
 >
 	<slot {builder} />
-	<div>
-		<ChevronDown class="h-4 w-4 opacity-50" />
-	</div>
 </SelectPrimitive.Trigger>

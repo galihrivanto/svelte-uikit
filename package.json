@@ -2,7 +2,7 @@
   "name": "svelte-uikit",
   "version": "0.0.1",
   "scripts": {
-    "dev": "vite dev",
+    "dev": "vite dev --host",
     "build": "vite build && npm run package",
     "preview": "vite preview",
     "package": "svelte-kit sync && svelte-package && publint",
@@ -142,6 +142,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "autoprefixer": "^10.4.16",
+    "daisyui": "^4.6.2",
     "eslint": "^8.56.0",
     "eslint-plugin-svelte": "^2.35.1",
     "postcss": "^8.4.32",
@@ -170,6 +171,7 @@
     "sveltekit-superforms": "^1.13.4",
     "tailwind-merge": "^2.2.1",
     "tailwind-variants": "^0.2.0",
+    "theme-change": "^2.5.0",
     "zod": "^3.22.4"
   }
 }
