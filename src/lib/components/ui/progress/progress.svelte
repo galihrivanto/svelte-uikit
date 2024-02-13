@@ -1,21 +1,29 @@
 <script lang="ts">
 	import { Progress as ProgressPrimitive } from "bits-ui";
-	import { cn } from "$lib/utils";
+	import { Color, type ColorStrings } from "$lib/enums/color.enum";
 
-	type $$Props = ProgressPrimitive.Props;
+	type $$Props = ProgressPrimitive.Props & {
+		color?: Color | ColorStrings;
+	};
 
 	let className: $$Props["class"] = undefined;
 	export let max: $$Props["max"] = 100;
 	export let value: $$Props["value"] = undefined;
+	export let color: $$Props["color"] = Color.Neutral;
 	export { className as class };
 </script>
 
-<ProgressPrimitive.Root
-	class={cn("relative h-4 w-full overflow-hidden rounded-full bg-secondary", className)}
-	{...$$restProps}
+<progress
+	class="progress {className}"
+	class:progress-primary={color == Color.Primary}
+	class:progress-secondary={color == Color.Secondary}
+	class:progress-accent={color == Color.Accent}
+	class:progress-info={color == Color.Info}
+	class:progress-warning={color == Color.Warning}
+	class:progress-error={color == Color.Error}
+	max={max}
+	value={value}
 >
-	<div
-		class="h-full w-full flex-1 bg-primary transition-all"
-		style={`transform: translateX(-${100 - (100 * (value ?? 0)) / (max ?? 1)}%)`}
-	/>
-</ProgressPrimitive.Root>
+</progress>
+
+

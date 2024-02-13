@@ -1,6 +1,8 @@
 import Root from "./button.svelte";
 import { tv, type VariantProps } from "tailwind-variants";
 import type { Button as ButtonPrimitive } from "bits-ui";
+import { Color, type ColorStrings } from "$lib/enums/color.enum"
+import { Size, type SizeStrings} from "$lib/enums/size.enum"
 
 const buttonVariants = tv({
 	base: "btn",
@@ -31,8 +33,13 @@ const buttonVariants = tv({
 });
 
 type Props = ButtonPrimitive.Props & {
-	variant?: Variant;
-	size?: Size;
+	color?: Color | ColorStrings;
+	size?: Size | SizeStrings;
+	link?: boolean;
+	outline?: boolean;
+	circle?: boolean;
+	glass?: boolean;
+	ghost?: boolean;
 };
 
 type Events = ButtonPrimitive.Events;

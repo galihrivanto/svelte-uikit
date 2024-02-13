@@ -3,20 +3,20 @@
 </script>
 
 <div class="flex flex-col w-1/2 mx-auto mt-36 gap-2">
-    <Button.Root>Default</Button.Root>
-    <Button.Root color="primary">Primary</Button.Root>
-    <Button.Root color="secondary">Secondary</Button.Root>
-    <Button.Root color="accent">Accent</Button.Root>
-    <Button.Root color="info">Info</Button.Root>
-    <Button.Root color="warning">Warning</Button.Root>
-    <Button.Root color="error">Error</Button.Root>
-    <Button.Root size="xs">Extra Small</Button.Root>
-    <Button.Root size="sm">Small</Button.Root>
-    <Button.Root size="md">Medium</Button.Root>
-    <Button.Root size="lg">Large</Button.Root>
-    <Button.Root link>Link</Button.Root>
-    <Button.Root outline>Outline</Button.Root>
-    <Button.Root circle>Circle</Button.Root>
-    <Button.Root glass>Glass</Button.Root>
-    <Button.Root ghost>Ghost</Button.Root>
+    <Button>Default</Button>
+    <Button color="primary">Primary</Button>
+    <Button color="secondary">Secondary</Button>
+    <Button color="accent">Accent</Button>
+    <Button color="info">Info</Button>
+    <Button color="warning">Warning</Button>
+    <Button color="error">Error</Button>
+    <Button size="xs">Extra Small</Button>
+    <Button size="sm">Small</Button>
+    <Button size="md">Medium</Button>
+    <Button size="lg">Large</Button>
+    <Button link>Link</Button>
+    <Button outline>Outline</Button>
+    <Button circle>Circle</Button>
+    <Button glass>Glass</Button>
+    <Button ghost>Ghost</Button>
 </div>

@@ -3,7 +3,7 @@
     import Textarea from "$lib/textarea"
     import Switch from "$lib/switch"
     import Slider from "$lib/slider"
-    import Select from "$lib/select"
+    import { Select, SelectItem, SelectTrigger, SelectContent, SelectGroup, SelectLabel, SelectValue, SelectInput } from "$lib/select"
 
     const fruits = [
         { value: "apple", label: "Apple" },
@@ -15,43 +15,43 @@
 </script>
 
 <div class="flex flex-col w-1/2 mx-auto mt-36 gap-2 p-4">
-    <Input.Root placeholder="input text here" ></Input.Root>
-    <Input.Root bordered placeholder="input text here" ></Input.Root>
-    <Input.Root color="primary" placeholder="input text here" ></Input.Root>
-    <Input.Root color="secondary" placeholder="input text here" ></Input.Root>
-    <Input.Root color="accent" placeholder="input text here" ></Input.Root>
-    <Input.Root color="info" placeholder="input text here" ></Input.Root>
-    <Input.Root bordered placeholder="with prepend icon">
+    <Input placeholder="input text here" ></Input>
+    <Input bordered placeholder="input text here" ></Input>
+    <Input color="primary" placeholder="input text here" ></Input>
+    <Input color="secondary" placeholder="input text here" ></Input>
+    <Input color="accent" placeholder="input text here" ></Input>
+    <Input color="info" placeholder="input text here" ></Input>
+    <Input bordered placeholder="with prepend icon">
         <svelte:fragment slot="prepend">
             <svg xmlns="http://www.w3.org/2000/svg" class="pointer-events-none w-8 h-8" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>
         </svelte:fragment>
-    </Input.Root>
-    <Input.Root bordered placeholder="with append icon">
+    </Input>
+    <Input bordered placeholder="with append icon">
         <svelte:fragment slot="append">
             <svg xmlns="http://www.w3.org/2000/svg" class="pointer-events-none w-8 h-8 " viewBox="0 0 20 20" fill="currentColor">
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>
         </svelte:fragment>
-    </Input.Root>
-    <Input.Root size="xs" bordered placeholder="input text here" ></Input.Root>
-    <Input.Root size="sm" bordered placeholder="input text here" ></Input.Root>
-    <Input.Root size="md" bordered placeholder="input text here" ></Input.Root>
-    <Input.Root size="lg" bordered placeholder="input text here" ></Input.Root>
+    </Input>
+    <Input size="xs" bordered placeholder="input text here" ></Input>
+    <Input size="sm" bordered placeholder="input text here" ></Input>
+    <Input size="md" bordered placeholder="input text here" ></Input>
+    <Input size="lg" bordered placeholder="input text here" ></Input>
 
-    <Textarea.Root placeholder="input text here" ></Textarea.Root>
-    <Textarea.Root bordered placeholder="input text here" ></Textarea.Root>
-    <Textarea.Root color="primary" placeholder="input text here" ></Textarea.Root>
-    <Textarea.Root color="secondary" placeholder="input text here" ></Textarea.Root>
-    <Textarea.Root color="accent" placeholder="input text here" ></Textarea.Root>
-    <Textarea.Root color="info" placeholder="input text here" ></Textarea.Root>
-    <Textarea.Root size="xs" bordered placeholder="input text here" ></Textarea.Root>
-    <Textarea.Root size="sm" bordered placeholder="input text here" ></Textarea.Root>
-    <Textarea.Root size="md" bordered placeholder="input text here" ></Textarea.Root>
-    <Textarea.Root size="lg" bordered placeholder="input text here" ></Textarea.Root>
+    <Textarea placeholder="input text here" ></Textarea>
+    <Textarea bordered placeholder="input text here" ></Textarea>
+    <Textarea color="primary" placeholder="input text here" ></Textarea>
+    <Textarea color="secondary" placeholder="input text here" ></Textarea>
+    <Textarea color="accent" placeholder="input text here" ></Textarea>
+    <Textarea color="info" placeholder="input text here" ></Textarea>
+    <Textarea size="xs" bordered placeholder="input text here" ></Textarea>
+    <Textarea size="sm" bordered placeholder="input text here" ></Textarea>
+    <Textarea size="md" bordered placeholder="input text here" ></Textarea>
+    <Textarea size="lg" bordered placeholder="input text here" ></Textarea>
 
     <Switch checked={true}/>
     <Switch color="primary" checked={true} />
@@ -67,56 +67,56 @@
     <Slider value={[50]} max={100} step={1} class="max-w-[70%] mb-2" color="secondary" />
     <Slider value={[50]} max={100} step={1} class="max-w-[70%] mb-2" color="success" />
 
-    <Select.Root>
-        <Select.Trigger class="w-[180px]">
-            <Select.Value placeholder="Select a fruit" />
-        </Select.Trigger>
-        <Select.Content>
-            <Select.Group>
-            <Select.Label>Fruits</Select.Label>
+    <Select>
+        <SelectTrigger class="w-[180px]">
+            <SelectValue placeholder="Select a fruit" />
+        </SelectTrigger>
+        <SelectContent>
+            <SelectGroup>
+            <SelectLabel>Fruits</SelectLabel>
             {#each fruits as fruit}
-                <Select.Item value={fruit.value} label={fruit.label}
-                >{fruit.label}</Select.Item
+                <SelectItem value={fruit.value} label={fruit.label}
+                >{fruit.label}</SelectItem
                 >
             {/each}
-            </Select.Group>
-        </Select.Content>
-        <Select.Input name="favoriteFruit" />
-    </Select.Root>
+            </SelectGroup>
+        </SelectContent>
+        <SelectInput name="favoriteFruit" />
+    </Select>
 
-    <Select.Root>
-        <Select.Trigger class="w-[180px]" bordered>
-            <Select.Value placeholder="Select a fruit" />
-        </Select.Trigger>
-        <Select.Content>
-            <Select.Group>
-            <Select.Label>Fruits</Select.Label>
+    <Select>
+        <SelectTrigger class="w-[180px]" bordered>
+            <SelectValue placeholder="Select a fruit" />
+        </SelectTrigger>
+        <SelectContent>
+            <SelectGroup>
+            <SelectLabel>Fruits</SelectLabel>
             {#each fruits as fruit}
-                <Select.Item value={fruit.value} label={fruit.label}
-                >{fruit.label}</Select.Item
+                <SelectItem value={fruit.value} label={fruit.label}
+                >{fruit.label}</SelectItem
                 >
             {/each}
-            </Select.Group>
-        </Select.Content>
-        <Select.Input name="favoriteFruit" />
-    </Select.Root>
+            </SelectGroup>
+        </SelectContent>
+        <SelectInput name="favoriteFruit" />
+    </Select>
 
-      <Select.Root>
-        <Select.Trigger class="w-[180px]" color="primary">
-          <Select.Value placeholder="Select a fruit" />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            <Select.Label>Fruits</Select.Label>
+      <Select>
+        <SelectTrigger class="w-[180px]" color="primary">
+          <SelectValue placeholder="Select a fruit" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            <SelectLabel>Fruits</SelectLabel>
             {#each fruits as fruit}
-              <Select.Item value={fruit.value} label={fruit.label}
-                >{fruit.label}</Select.Item
+              <SelectItem value={fruit.value} label={fruit.label}
+                >{fruit.label}</SelectItem
               >
             {/each}
-          </Select.Group>
-        </Select.Content>
-        <Select.Input name="favoriteFruit" />
-      </Select.Root>
+          </SelectGroup>
+        </SelectContent>
+        <SelectInput name="favoriteFruit" />
+      </Select>
 
 </div>
 

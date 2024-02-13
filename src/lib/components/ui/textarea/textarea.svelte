@@ -9,7 +9,12 @@
 	export let bordered: boolean = false;
 	export let ghost: boolean = false;
 
-	type $$Props = HTMLTextareaAttributes;
+	type $$Props = HTMLTextareaAttributes  & {
+		color?: Color | ColorStrings;
+		size?: Size | SizeStrings;
+		bordered?: boolean;
+		ghost?: boolean;
+	};
 
 	let className: $$Props["class"] = undefined;
 	export let value: $$Props["value"] = undefined;

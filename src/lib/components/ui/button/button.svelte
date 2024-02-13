@@ -9,7 +9,7 @@
 	type $$Events = Events;
 
 	let className: $$Props["class"] = undefined;
-	export let color: Color | ColorStrings = Color.primary;
+	export let color: Color | ColorStrings = Color.Neutral;
 	export let size: Size | SizeStrings = Size.Md;
 	export let builders: $$Props["builders"] = [];
 	export { className as class };
@@ -31,7 +31,17 @@
 <ButtonPrimitive.Root
 	{builders}
 	class={cn(
-		buttonVariants({ color, size, className }),
+		"btn",
+		classIf(color == Color.Primary, "btn-primary"),
+		classIf(color == Color.Secondary, "btn-secondary"),
+		classIf(color == Color.Accent, "btn-accent"),
+		classIf(color == Color.Info, "btn-info"),
+		classIf(color == Color.Warning, "btn-warning"),
+		classIf(color == Color.Error, "btn-error"),
+		classIf(size == Size.Xs, "btn-xs"),
+		classIf(size == Size.Sm, "btn-sm"),
+		classIf(size == Size.Md, "btn-md"),
+		classIf(size == Size.Lg, "btn-lg"),
 		classIf(active, "btn-active"),
 		classIf(outline, "btn-outline"),
 		classIf(wide, "btn-wide"),
@@ -43,7 +53,8 @@
 		classIf(animation, "btn-animation"),
 		classIf(responsive, "btn-responsive"),
 		classIf(link, "btn-link"),
-		classIf(ghost, "btn-ghost")
+		classIf(ghost, "btn-ghost"),
+		className
 	)}
 	type="button"
 	{...$$restProps}

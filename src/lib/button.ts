@@ -1,3 +1,3 @@
-import * as Button from "./components/ui/button"
+import { Button } from "./components/ui/button"
 
 export default Button

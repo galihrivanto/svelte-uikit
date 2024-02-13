@@ -1,3 +1,3 @@
-import * as Alert from "./components/ui/alert"
+import { Alert } from "./components/ui/alert"
 
 export default Alert

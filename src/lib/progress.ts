@@ -1,3 +1,3 @@
-import * as Progress from "./components/ui/progress"
+import { Root } from "./components/ui/progress"
 
-export default Progress
+export default Root

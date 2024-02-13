@@ -10,7 +10,12 @@
 	export let bordered: boolean = false;
 	export let ghost: boolean = false;
 
-	type $$Props = HTMLInputAttributes;
+	type $$Props = HTMLInputAttributes & {
+		color?: Color | ColorStrings;
+		size?: Size | SizeStrings;
+		bordered?: boolean;
+		ghost?: boolean;
+	};
 	type $$Events = InputEvents;
 
 	let className: $$Props["class"] = undefined;
