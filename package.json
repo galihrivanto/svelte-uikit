@@ -5,7 +5,7 @@
     "dev": "vite dev --host",
     "build": "vite build && npm run package",
     "preview": "vite preview",
-    "package": "npx tailwindcss -o dist/style.css --minify && svelte-kit sync && svelte-package && publint",
+    "package": "svelte-kit sync && svelte-package && publint && npx tailwindcss -o dist/style.css --minify",
     "style": "npx tailwindcss -o dist/style.css --minify",
     "prepublishOnly": "npm run package",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
