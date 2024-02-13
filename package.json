@@ -1,5 +1,5 @@
 {
-  "name": "svelte-uikit",
+  "name": "@wja-id/svelte-uikit",
   "version": "0.0.1",
   "scripts": {
     "dev": "vite dev --host",
