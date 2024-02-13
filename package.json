@@ -5,7 +5,8 @@
     "dev": "vite dev --host",
     "build": "vite build && npm run package",
     "preview": "vite preview",
-    "package": "svelte-kit sync && svelte-package && publint",
+    "package": "npx tailwindcss -o dist/style.css --minify && svelte-kit sync && svelte-package && publint",
+    "style": "npx tailwindcss -o dist/style.css --minify",
     "prepublishOnly": "npm run package",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -131,6 +132,10 @@
       "types": "./dist/switch.d.ts",
       "svelte": "./dist/switch.js",
       "default": "./dist/switch.js"
+    },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     },
     "./tabs": {
       "types": "./dist/tabs.d.ts",
