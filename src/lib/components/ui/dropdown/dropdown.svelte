@@ -11,7 +11,7 @@
     <Popover.Trigger>
         <slot name="trigger"/>
     </Popover.Trigger>
-    <Popover.Content class="p-0 bg-base-100 {iconOnly ? "w-fit" : "w-56" }">
+    <Popover.Content class="p-0 bg-base-100 {iconOnly ? "w-fit" : "w-56" }" sideOffset={5}>
         <ul class="menu bg-base-100 rounded-box { orientation == Orientation.Horizontal ? "menu-horizontal" : "menu-vertical"}">
             <slot name="content"/>
         </ul>
