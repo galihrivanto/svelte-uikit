@@ -11,13 +11,20 @@
     export let tooltip: string = "";
     export let tooltipPosition: Position | PositionStrings = Position.Right;
     export let tooltipColor: Color | ColorStrings = Color.Neutral;
+    export let disabled: boolean = false;
     
+    function onClick(e: MouseEvent) {
+        if (disabled) return;
+
+        dispatch("click", e)
+    }
+
 </script>
 
-<li>
+<li class="{disabled ? "disabled": ""}">
     <div 
         data-tip={iconOnly ? tooltip : ""}
-        class="tooltip"
+        class="{tooltip != "" ? "tooltip" : ""}"
         class:tooltip-neutral={tooltipColor == Color.Neutral}
         class:tooltip-primary={tooltipColor == Color.Primary}
         class:tooltip-secondary={tooltipColor == Color.Secondary}
@@ -30,13 +37,13 @@
         class:tooltip-left={tooltipPosition == Position.Left}
         class:tooltip-right={tooltipPosition == Position.Right}
     >    
-    <a href="." on:click|preventDefault={(e) => dispatch("click", e)}>
-        {#if icon }
-        <Icon icon={icon} class="text-xl" />
-        {/if}
-        {#if !iconOnly}
-        <span><slot/></span>
-        {/if}
-    </a>
+        <a href="." on:click|preventDefault={onClick} class="flex flex-row gap-4">
+            {#if icon }
+            <Icon icon={icon} class="text-xl" />
+            {/if}
+            {#if !iconOnly}
+            <span><slot/></span>
+            {/if}
+        </a>
     </div>
 </li>
