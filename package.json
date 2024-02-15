@@ -73,6 +73,11 @@
       "svelte": "./dist/dialog.js",
       "default": "./dist/dialog.js"
     },
+    "./dropdown": {
+      "types": "./dist/dropdown.d.ts",
+      "svelte": "./dist/dropdown.js",
+      "default": "./dist/dropdown.js"
+    },
     "./form": {
       "types": "./dist/form.d.ts",
       "svelte": "./dist/form.js",
