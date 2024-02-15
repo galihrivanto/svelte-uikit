@@ -4,6 +4,7 @@
 
 <div class="flex flex-col w-1/2 mx-auto mt-36 gap-2">
     <Button>Default</Button>
+    <Button color="neutral">Primary</Button>
     <Button color="primary">Primary</Button>
     <Button color="secondary">Secondary</Button>
     <Button color="accent">Accent</Button>

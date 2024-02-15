@@ -9,7 +9,7 @@
 	type $$Events = Events;
 
 	let className: $$Props["class"] = undefined;
-	export let color: Color | ColorStrings = Color.Neutral;
+	export let color: Color | ColorStrings;
 	export let size: Size | SizeStrings = Size.Md;
 	export let builders: $$Props["builders"] = [];
 	export { className as class };
@@ -32,6 +32,7 @@
 	{builders}
 	class={cn(
 		"btn",
+		classIf(color == Color.Neutral, "btn-neutral"),
 		classIf(color == Color.Primary, "btn-primary"),
 		classIf(color == Color.Secondary, "btn-secondary"),
 		classIf(color == Color.Accent, "btn-accent"),
