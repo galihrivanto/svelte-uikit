@@ -1,30 +1,42 @@
 <script lang="ts">
     import * as Tooltip from "../tooltip"
     import Icon from "@iconify/svelte"
+    import { Position, type PositionStrings } from "$lib/enums/position.enum";
+    import { Color, type ColorStrings } from "$lib/enums/color.enum"
     import { createEventDispatcher } from "svelte";
 
     const dispatch  = createEventDispatcher();
     export let icon: string | null = null;
     export let iconOnly: boolean = false;
+    export let tooltip: string = "";
+    export let tooltipPosition: Position | PositionStrings = Position.Right;
+    export let tooltipColor: Color | ColorStrings = Color.Neutral;
     
 </script>
 
 <li>
+    <div 
+        data-tip={iconOnly ? tooltip : ""}
+        class="tooltip"
+        class:tooltip-neutral={tooltipColor == Color.Neutral}
+        class:tooltip-primary={tooltipColor == Color.Primary}
+        class:tooltip-secondary={tooltipColor == Color.Secondary}
+        class:tooltip-accent={tooltipColor == Color.Accent}
+        class:tooltip-info={tooltipColor == Color.Info}
+        class:tooltip-warning={tooltipColor == Color.Warning}
+        class:tooltip-error={tooltipColor == Color.Error}
+        class:tooltip-top={tooltipPosition == Position.Top}
+        class:tooltip-bottom={tooltipPosition == Position.Bottom}
+        class:tooltip-left={tooltipPosition == Position.Left}
+        class:tooltip-right={tooltipPosition == Position.Right}
+    >    
     <a href="." on:click|preventDefault={(e) => dispatch("click", e)}>
         {#if icon }
-        <Tooltip.Root>
-            <Tooltip.Trigger>
-                <Icon icon={icon} class="text-xl" />
-            </Tooltip.Trigger>
-            <Tooltip.Content>
-                {#if iconOnly}
-                <p><slot/></p>
-                {/if}
-            </Tooltip.Content>
-        </Tooltip.Root>
+        <Icon icon={icon} class="text-xl" />
         {/if}
         {#if !iconOnly}
         <span><slot/></span>
         {/if}
     </a>
+    </div>
 </li>
