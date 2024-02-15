@@ -161,6 +161,11 @@
       "types": "./dist/tooltip.d.ts",
       "svelte": "./dist/tooltip.js",
       "default": "./dist/tooltip.js"      
+    },
+    "./enums/*": {
+      "types": "./dist/enums/*.d.ts",
+      "svelte": "./dist/enums/*.js",
+      "default": "./dist/enums/*.js"  
     }
   },
   "files": [
