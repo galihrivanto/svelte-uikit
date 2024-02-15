@@ -3,6 +3,8 @@
     import Textarea from "$lib/textarea"
     import Switch from "$lib/switch"
     import Slider from "$lib/slider"
+    import RadioGroup from "$lib/radio-group"
+    import Label from "$lib/label"
     import { Select, SelectItem, SelectTrigger, SelectContent, SelectGroup, SelectLabel, SelectValue, SelectInput } from "$lib/select"
 
     const fruits = [
@@ -117,6 +119,30 @@
         </SelectContent>
         <SelectInput name="favoriteFruit" />
       </Select>
+
+      <RadioGroup.Root>
+        <div class="flex items-center space-x-2">
+          <RadioGroup.Item value="PNG" id="r1" color="warning" />
+          <Label for="r1">PNG</Label>
+        </div>
+        <div class="flex items-center space-x-2">
+          <RadioGroup.Item value="SVG" id="r2" color="warning" />
+          <Label for="r2">SVG (In PRO only)</Label>
+        </div>
+        <RadioGroup.Input name="format" />
+      </RadioGroup.Root>
+
+      <RadioGroup.Root>
+        <div class="flex items-center space-x-2">
+          <RadioGroup.Item value="PNG" id="r1" color="primary" />
+          <Label for="r1">PNG</Label>
+        </div>
+        <div class="flex items-center space-x-2">
+          <RadioGroup.Item value="SVG" id="r2" color="primary" />
+          <Label for="r2">SVG (In PRO only)</Label>
+        </div>
+        <RadioGroup.Input name="format" />
+      </RadioGroup.Root>
 
 </div>
 
