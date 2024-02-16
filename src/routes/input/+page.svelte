@@ -3,6 +3,7 @@
     import Textarea from "$lib/textarea"
     import Switch from "$lib/switch"
     import Slider from "$lib/slider"
+    import FileInput from "$lib/file-input"
     import RadioGroup from "$lib/radio-group"
     import Label from "$lib/label"
     import { Select, SelectItem, SelectTrigger, SelectContent, SelectGroup, SelectLabel, SelectValue, SelectInput } from "$lib/select"
@@ -177,6 +178,12 @@
         </div>
         <RadioGroup.Input name="format" />
       </RadioGroup.Root>
+
+      <FileInput bordered />
+      <FileInput color="primary" />
+      <FileInput color="secondary"/>
+      <FileInput size="lg" bordered />
+      <FileInput size="sm" bordered />
 
 </div>
 

@@ -88,6 +88,11 @@
       "svelte": "./dist/input.js",
       "default": "./dist/input.js"
     },
+    "./file-input": {
+      "types": "./dist/file-input.d.ts",
+      "svelte": "./dist/file-input.js",
+      "default": "./dist/file-input.js"
+    },
     "./label": {
       "types": "./dist/label.d.ts",
       "svelte": "./dist/label.js",
