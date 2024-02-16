@@ -1,5 +1,6 @@
 <script lang="ts">
     import Button from "$lib/button";
+    import Icon from "@iconify/svelte"
 </script>
 
 <div class="flex flex-col w-1/2 mx-auto mt-36 gap-2">
@@ -17,7 +18,9 @@
     <Button size="lg">Large</Button>
     <Button link>Link</Button>
     <Button outline>Outline</Button>
-    <Button circle>Circle</Button>
+    <Button circle color="neutral">
+        <Icon icon="mdi:alert-circle" class="text-2xl" />
+    </Button>
     <Button glass>Glass</Button>
     <Button ghost>Ghost</Button>
 </div>
