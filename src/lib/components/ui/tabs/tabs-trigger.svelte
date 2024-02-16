@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { Tabs as TabsPrimitive } from "bits-ui";
 	import { cn } from "$lib/utils";
+	import { Color, type ColorStrings } from '$lib/enums/color.enum';
+	import { Size, type SizeStrings } from '$lib/enums/size.enum';
 
 	type $$Props = TabsPrimitive.TriggerProps;
 	type $$Events = TabsPrimitive.TriggerEvents;

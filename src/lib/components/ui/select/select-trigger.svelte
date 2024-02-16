@@ -9,7 +9,12 @@
 	export let size: Size | SizeStrings = Size.Md;
 	export let bordered: boolean = false;
 
-	type $$Props = SelectPrimitive.TriggerProps;
+	type $$Props = SelectPrimitive.TriggerProps  & {
+		color?: Color | ColorStrings;
+		size?: Size | SizeStrings;
+		bordered?: boolean;
+		ghost?: boolean;
+	};
 	type $$Events = SelectPrimitive.TriggerEvents;
 
 	let className: $$Props["class"] = undefined;

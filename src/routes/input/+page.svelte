@@ -103,6 +103,40 @@
         <SelectInput name="favoriteFruit" />
     </Select>
 
+    <Select>
+        <SelectTrigger class="w-[180px]" size="sm" bordered>
+            <SelectValue placeholder="Select a fruit" />
+        </SelectTrigger>
+        <SelectContent>
+            <SelectGroup>
+            <SelectLabel>Fruits</SelectLabel>
+            {#each fruits as fruit}
+                <SelectItem value={fruit.value} label={fruit.label}
+                >{fruit.label}</SelectItem
+                >
+            {/each}
+            </SelectGroup>
+        </SelectContent>
+        <SelectInput name="favoriteFruit" />
+    </Select>
+
+    <Select>
+        <SelectTrigger class="w-[180px]" size="xs" bordered>
+            <SelectValue placeholder="Select a fruit" />
+        </SelectTrigger>
+        <SelectContent>
+            <SelectGroup>
+            <SelectLabel>Fruits</SelectLabel>
+            {#each fruits as fruit}
+                <SelectItem value={fruit.value} label={fruit.label}
+                >{fruit.label}</SelectItem
+                >
+            {/each}
+            </SelectGroup>
+        </SelectContent>
+        <SelectInput name="favoriteFruit" />
+    </Select>
+
       <Select>
         <SelectTrigger class="w-[180px]" color="primary">
           <SelectValue placeholder="Select a fruit" />

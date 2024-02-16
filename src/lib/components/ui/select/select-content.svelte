@@ -27,7 +27,7 @@
 	{outTransitionConfig}
 	{sideOffset}
 	class={cn(
-		"relative z-50 min-w-[8rem] overflow-hidden rounded-md border bg-base-100 text-base-content shadow-md outline-none",
+		"relative z-50 min-w-[8rem] overflow-hidden rounded-md border border-base-200 bg-base-100 text-base-content shadow-md outline-none",
 		className
 	)}
 	{...$$restProps}
