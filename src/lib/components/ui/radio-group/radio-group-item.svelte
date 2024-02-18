@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { RadioGroup as RadioGroupPrimitive } from "bits-ui";
-	import { Circle } from "lucide-svelte";
+	import Icon from "@iconify/svelte";
 	import { classIf, cn } from "$lib/utils";
     import { Color, type ColorStrings } from "$lib/enums/color.enum";
 
@@ -32,7 +32,7 @@
 >
 	<div class="flex items-center justify-center">
 		<RadioGroupPrimitive.ItemIndicator>
-			<Circle class="h-2.5 w-2.5 {
+			<Icon icon="mdi:circle" class="h-4 w-4 {
 				cn(
 					classIf(color == Color.Primary, "text-primary"),
 					classIf(color == Color.Secondary, "text-secondary"),

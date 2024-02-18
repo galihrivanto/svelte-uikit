@@ -3,9 +3,12 @@
 	import { cn } from "$lib/utils";
 	import { fade } from "svelte/transition";
 
-	type $$Props = DialogPrimitive.OverlayProps;
+	type $$Props = DialogPrimitive.OverlayProps & {
+		backdrop?: boolean;
+	};
 
 	let className: $$Props["class"] = undefined;
+	export let backdrop: $$Props["backdrop"] = true;
 	export let transition: $$Props["transition"] = fade;
 	export let transitionConfig: $$Props["transitionConfig"] = {
 		duration: 150,
@@ -16,6 +19,6 @@
 <DialogPrimitive.Overlay
 	{transition}
 	{transitionConfig}
-	class={cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm", className)}
+	class={cn("fixed inset-0 z-50", backdrop ? "bg-background/80 backdrop-blur-sm": "", className)}
 	{...$$restProps}
 />

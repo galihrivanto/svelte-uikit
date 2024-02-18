@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { Select as SelectPrimitive } from "bits-ui";
-	import { ChevronDown } from "lucide-svelte";
 	import { cn, classIf } from "$lib/utils";
 	import { Color, type ColorStrings } from '$lib/enums/color.enum';
 	import { Size, type SizeStrings } from '$lib/enums/size.enum';

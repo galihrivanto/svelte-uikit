@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Menubar as MenubarPrimitive } from "bits-ui";
 	import { cn } from "$lib/utils";
-	import { Check } from "lucide-svelte";
+	import Icon from "@iconify/svelte";
 
 	type $$Props = MenubarPrimitive.CheckboxItemProps;
 	type $$Events = MenubarPrimitive.CheckboxItemEvents;
@@ -28,7 +28,7 @@
 >
 	<span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
 		<MenubarPrimitive.CheckboxIndicator>
-			<Check class="h-4 w-4" />
+			<Icon icon="mdi:check" class="h-4 w-4" />
 		</MenubarPrimitive.CheckboxIndicator>
 	</span>
 	<slot />

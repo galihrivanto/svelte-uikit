@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button, type Props, buttonVariants } from "$lib/components/ui/button/index.js";
 	import { cn } from "$lib/utils";
-	import { ArrowRight } from "lucide-svelte";
+	import Icon from "@iconify/svelte";
 	import type { VariantProps } from "tailwind-variants";
 	import { getEmblaContext } from "./context.js";
 
@@ -30,6 +30,6 @@
 	on:keydown={handleKeyDown}
 	{...$$restProps}
 >
-	<ArrowRight class="h-4 w-4" />
+	<Icon icon="mdi:arrow-right" class="h-4 w-4" />
 	<span class="sr-only">Next slide</span>
 </Button>

@@ -1,36 +1,30 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-  
-    export let component: any;
-    export let delay: number | null = null;
-  
-    let loadedComponent: any = null;
-    let timeout: ReturnType<typeof setTimeout>;
-    let showFallback = delay != null;
-  
-    let props;
-    $: {
-      const { component, delay, ...restProps } = $$props;
-      props = restProps;
-    }
-  
-    onMount(() => {
-      if (delay) {
-        timeout = setTimeout(() => {
-          showFallback = true;
-        }, delay);
-      }
-      
-      component().then((module: {default: any}) => {
-        loadedComponent = module.default;
-      });
-      return () => clearTimeout(timeout);
-    });
-  </script>
-  
-  {#if loadedComponent}
-    <svelte:component this={loadedComponent} {...props} />
-  {:else if showFallback}
+  import { onMount } from "svelte";
+
+  type $$Props = typeof $$props & {
+    component: () => Promise<any>;
+    delay?: number;
+  };
+
+  export let component: $$Props["component"];
+  export let delay: $$Props["delay"] = undefined;
+
+  let loading: Promise<any>;
+
+  onMount(() => {
+    setTimeout(() => {
+      loading = component?.();
+    }, delay ? delay : 0)
+  })
+</script>
+
+{#if loading}
+  {#await loading}
     <slot />
-  {/if}
-  
+  {:then {default: LoadedComponent}}
+    <LoadedComponent {...$$restProps} />
+  {/await}	
+{:else}
+  <slot />
+{/if}
+

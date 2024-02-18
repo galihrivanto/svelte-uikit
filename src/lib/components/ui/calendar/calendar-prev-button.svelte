@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Calendar as CalendarPrimitive } from "bits-ui";
-	import { ChevronLeft } from "lucide-svelte";
+	import Icon from "@iconify/svelte";
 	import { buttonVariants } from "$lib/components/ui/button";
 	import { cn } from "$lib/utils";
 
@@ -22,6 +22,6 @@
 	let:builder
 >
 	<slot {builder}>
-		<ChevronLeft class="h-4 w-4" />
+		<Icon icon="mdi:chevron-left" class="h-4 w-4" />
 	</slot>
 </CalendarPrimitive.PrevButton>
