@@ -3,6 +3,7 @@
 	import { Color, type ColorStrings } from "$lib/enums/color.enum"
     import { fade } from "svelte/transition";
 	import { quintOut } from "svelte/easing";
+	import Icon from "@iconify/svelte";
 
 	type $$Props = HTMLAttributes<HTMLDivElement> & {
 		color?: Color | ColorStrings;
@@ -36,10 +37,8 @@
 		{/if}
 	</div>
 	{#if closeable}
-	<button class="btn btn-circle btn-xs absolute right-0 mr-2" on:click={() => closed = true }>
-		<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...$$props}>
-			<path fill="currentColor" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z" />
-		</svg>
+	<button class="btn btn-circle btn-xs btn-ghost absolute right-0 mr-2" on:click={() => closed = true }>
+		<Icon icon="mdi:close" class="w-3 h-3"></Icon>
 	</button>
 	{/if}
 </div>
