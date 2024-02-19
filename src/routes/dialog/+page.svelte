@@ -12,7 +12,7 @@
         <Dialog.Trigger>
             <button class="btn btn-primary">Show Dialog</button>
         </Dialog.Trigger>
-        <Dialog.Content class="sm:max-w-[425px]">
+        <Dialog.Content class="">
             <h1>Dialog Title</h1>
             <span>Dialog content</span>
         </Dialog.Content>
@@ -22,7 +22,7 @@
         <Dialog.Trigger>
             <button class="btn btn-primary">Lazy Content</button>
         </Dialog.Trigger>
-        <Dialog.Content class="sm:max-w-[425px]">
+        <Dialog.Content class="">
             <Lazy component={content} delay={10000}>
                 loading content ...
             </Lazy>

@@ -23,7 +23,8 @@
 		{transition}
 		{transitionConfig}
 		class={cn(
-			"modal-box",
+			// "modal-box", FIXME: modal-box not overriden
+			"shadow-lg rounded-lg", 
 			"fixed left-[50%] top-[50%] z-50 grid translate-x-[-50%] translate-y-[-50%]",
 			className
 		)}
