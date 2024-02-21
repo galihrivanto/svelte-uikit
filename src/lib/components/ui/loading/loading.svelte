@@ -24,9 +24,9 @@
     class:text-info={color == Color.Info}
     class:text-warning={color == Color.Warning}
     class:text-error={color == Color.Error}
-    class:size-xs={size == Size.Xs}
-    class:size-sm={size == Size.Sm}
-    class:size-md={size == Size.Md}
-    class:size-lg={size == Size.Lg}
+    class:loading-xs={size == Size.Xs}
+    class:loading-sm={size == Size.Sm}
+    class:loading-md={size == Size.Md}
+    class:loading-lg={size == Size.Lg}
 ></span>
 
