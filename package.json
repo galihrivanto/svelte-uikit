@@ -78,6 +78,11 @@
       "svelte": "./dist/dropdown.js",
       "default": "./dist/dropdown.js"
     },
+    "./drawer": {
+      "types": "./dist/drawer.d.ts",
+      "svelte": "./dist/drawer.js",
+      "default": "./dist/drawer.js"
+    },
     "./form": {
       "types": "./dist/form.d.ts",
       "svelte": "./dist/form.js",
