@@ -7,12 +7,13 @@
     export let horizontal: Horizontal | HorizontalStrings = Horizontal.End;
     export let vertical: Vertical | VerticalStrings = Vertical.Top;
     export let avatar: boolean = false;
+    export let visible: boolean = true;
 </script>
 
 <div class="indicator"
     class:avatar={avatar}
 >
-    <span class="indicator-item badge"
+    <span class="indicator-item badge {!visible ? "hidden": "visible"}"
         class:badge-neutral={color == Color.Neutral}
         class:badge-primary={color == Color.Primary}
         class:badge-secondary={color == Color.Secondary}

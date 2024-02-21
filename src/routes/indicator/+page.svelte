@@ -13,6 +13,11 @@
         <div class="grid w-32 h-32 bg-base-300 place-items-center">content</div>
     </Indicator>
 
+    <Indicator color="secondary" horizontal="start" visible={false}>
+        <svelte:fragment slot="badge"></svelte:fragment>
+        <div class="grid w-32 h-32 bg-base-300 place-items-center">content</div>
+    </Indicator>
+
     <div class="indicator">
         <span class="indicator-item badge badge-secondary"></span> 
         <div class="grid w-32 h-32 bg-base-300 place-items-center">content</div>
