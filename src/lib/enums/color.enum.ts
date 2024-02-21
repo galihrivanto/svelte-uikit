@@ -1,4 +1,5 @@
 export enum Color {
+    Default = '',
     Primary = 'primary',
     Secondary = 'secondary',
     Accent = 'accent',
@@ -10,4 +11,4 @@ export enum Color {
     Ghost = 'ghost'
 };
 
-export type ColorStrings = 'primary' | 'secondary' | 'accent' | 'neutral' | 'success' | 'error' | 'warning' | 'info' | 'ghost' | '';
+export type ColorStrings = '' | 'primary' | 'secondary' | 'accent' | 'neutral' | 'success' | 'error' | 'warning' | 'info' | 'ghost' | '';

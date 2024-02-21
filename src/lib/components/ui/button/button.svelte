@@ -1,31 +1,46 @@
 <script lang="ts">
 	import { Button as ButtonPrimitive } from "bits-ui";
 	import { cn, classIf } from "$lib/utils";
-	import { buttonVariants, type Props, type Events } from ".";
+	import { type Events } from ".";
 	import { Color, type ColorStrings } from "$lib/enums/color.enum"
 	import { Size, type SizeStrings} from "$lib/enums/size.enum"
 
-	type $$Props = Props;
+	type $$Props = ButtonPrimitive.Props & {
+		color?: Color | ColorStrings;
+		size?: Size | SizeStrings;
+		active?: boolean;
+		link?: boolean;
+		outline?: boolean;
+		wide?: boolean;
+		circle?: boolean;
+		square?: boolean;
+		block?: boolean;
+		loading?: boolean;
+		animation?: boolean;
+		responsive?: boolean;
+		glass?: boolean;
+		ghost?: boolean;
+	};
 	type $$Events = Events;
 
 	let className: $$Props["class"] = undefined;
-	export let color: Color | ColorStrings;
-	export let size: Size | SizeStrings = Size.Md;
+	export let color: $$Props["color"] = Color.Default;
+	export let size: $$Props["size"] = Size.Md;
+	export let active: $$Props["active"] = false;
+	export let outline: $$Props["outline"] = false;
+	export let wide: $$Props["wide"] = false;
+	export let glass: $$Props["glass"] = false;
+	export let square: $$Props["square"] = false;
+	export let circle: $$Props["circle"] = false;
+	export let block: $$Props["block"] = false;
+	export let loading: $$Props["loading"] = false;
+	export let animation: $$Props["animation"] = true;
+	export let responsive: $$Props["responsive"] = false;
+	export let link: $$Props["link"] = false;
+	export let ghost: $$Props["ghost"] = false;
+
 	export let builders: $$Props["builders"] = [];
 	export { className as class };
-
-	export let active: boolean = false;
-	export let outline: boolean = false;
-	export let wide: boolean = false;
-	export let glass: boolean = false;
-	export let square: boolean = false;
-	export let circle: boolean = false;
-	export let block: boolean = false;
-	export let loading: boolean = false;
-	export let animation: boolean = true;
-	export let responsive: boolean = false;
-	export let link: boolean = false;
-	export let ghost: boolean = false;
 </script>
 
 <ButtonPrimitive.Root
@@ -43,18 +58,18 @@
 		classIf(size == Size.Sm, "btn-sm"),
 		classIf(size == Size.Md, "btn-md"),
 		classIf(size == Size.Lg, "btn-lg"),
-		classIf(active, "btn-active"),
-		classIf(outline, "btn-outline"),
-		classIf(wide, "btn-wide"),
-		classIf(glass, "btn-glass"),
-		classIf(square, "btn-square"),
-		classIf(circle, "btn-circle"),
-		classIf(block, "btn-block"),
-		classIf(loading, "btn-loading"),
-		classIf(animation, "btn-animation"),
-		classIf(responsive, "btn-responsive"),
-		classIf(link, "btn-link"),
-		classIf(ghost, "btn-ghost"),
+		classIf(active == true, "btn-active"),
+		classIf(outline == true, "btn-outline"),
+		classIf(wide == true, "btn-wide"),
+		classIf(glass == true, "btn-glass"),
+		classIf(square == true, "btn-square"),
+		classIf(circle == true, "btn-circle"),
+		classIf(block == true, "btn-block"),
+		classIf(loading == true, "btn-loading"),
+		classIf(animation == true, "btn-animation"),
+		classIf(responsive == true, "btn-responsive"),
+		classIf(link == true, "btn-link"),
+		classIf(ghost == true, "btn-ghost"),
 		className
 	)}
 	type="button"
