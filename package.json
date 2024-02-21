@@ -93,6 +93,11 @@
       "svelte": "./dist/input.js",
       "default": "./dist/input.js"
     },
+    "./indicator": {
+      "types": "./dist/indicator.d.ts",
+      "svelte": "./dist/indicator.js",
+      "default": "./dist/indicator.js"
+    },
     "./file-input": {
       "types": "./dist/file-input.d.ts",
       "svelte": "./dist/file-input.js",
