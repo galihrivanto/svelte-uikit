@@ -2,9 +2,7 @@
     import Dialog from "$lib/dialog";
     import Lazy from "$lib/lazy";
 
-
-    const content = () => import("./content.svelte")
-
+    const content = () => import("./content.svelte");
 </script>
 
 <div class="flex flex-col w-1/2 mx-auto mt-36 gap-2">
@@ -16,7 +14,7 @@
             <h1>Dialog Title</h1>
             <span>Dialog content</span>
         </Dialog.Content>
-      </Dialog.Root>
+    </Dialog.Root>
 
     <Dialog.Root>
         <Dialog.Trigger>

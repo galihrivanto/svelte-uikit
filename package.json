@@ -98,6 +98,16 @@
       "svelte": "./dist/label.js",
       "default": "./dist/label.js"
     },
+    "./lazy": {
+      "types": "./dist/lazy.d.ts",
+      "svelte": "./dist/lazy.js",
+      "default": "./dist/lazy.js"
+    },
+    "./loading": {
+      "types": "./dist/loading.d.ts",
+      "svelte": "./dist/loading.js",
+      "default": "./dist/loading.js"
+    },
     "./menubar": {
       "types": "./dist/menubar.d.ts",
       "svelte": "./dist/menubar.js",
