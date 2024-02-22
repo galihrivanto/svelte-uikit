@@ -18,7 +18,7 @@
         <div class="background z-0" style="width:{size}px; height:{size}px;" on:wheel={(e)=>{ e.preventDefault()}}>
         </div>
         <svelte:fragment slot="content">     
-            <div class="p-2 bg-base-200 h-full">
+            <div class="p-3 mt-1 bg-gradient-to-t from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% h-full">
                 this is drawer
             </div>             
         </svelte:fragment>
@@ -29,7 +29,7 @@
         <div class="background z-0" style="width:{size}px; height:{size}px;" on:wheel={(e)=>{ e.preventDefault()}}>
         </div>
         <svelte:fragment slot="content">     
-            <div class="p-2 bg-base-200 h-full">
+            <div class="p-3 mt-1 bg-gradient-to-t from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% h-full">
                 this is drawer
             </div>             
         </svelte:fragment>

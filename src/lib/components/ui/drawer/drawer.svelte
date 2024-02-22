@@ -45,7 +45,7 @@
     >        
         <Button 
             circle size="xs" 
-            class="absolute top-1 {position == Position.Left ? "right-1" : "left-1"}"
+            class="absolute top-2 {position == Position.Left ? "right-2" : "left-2"}"
             on:click={() => { open = false }}
         >
             <Icon icon={position == Position.Left ? "mdi:chevron-left" : "mdi:chevron-right"} class="w-4 h-4" />
