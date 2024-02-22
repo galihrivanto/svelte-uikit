@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Accordion as AccordionPrimitive } from "bits-ui";
-	import { ChevronDown } from "lucide-svelte";
+	import Icon from "@iconify/svelte";
 	import { cn } from "$lib/utils";
 
 	type $$Props = AccordionPrimitive.TriggerProps;
@@ -22,6 +22,6 @@
 	>
 		
 		<slot />
-		<ChevronDown class="h-4 w-4 transition-transform duration-200" />
+		<Icon icon="mdi:chevron-down" class="h-4 w-4 transition-transform duration-200"/>
 	</AccordionPrimitive.Trigger>
 </AccordionPrimitive.Header>

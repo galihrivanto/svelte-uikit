@@ -242,7 +242,6 @@
     "cmdk-sv": "^0.0.13",
     "embla-carousel-svelte": "8.0.0-rc22",
     "formsnap": "^0.4.3",
-    "lucide-svelte": "^0.334.0",
     "mode-watcher": "^0.2.0",
     "svelte-sonner": "^0.3.17",
     "sveltekit-superforms": "^1.13.4",
