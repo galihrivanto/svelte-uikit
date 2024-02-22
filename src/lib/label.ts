@@ -1,3 +1,6 @@
-import { Label } from "./components/ui/label"
+import { Label, FormLabel } from "./components/ui/label"
 
-export default Label
+export {
+    Label,
+    FormLabel
+}

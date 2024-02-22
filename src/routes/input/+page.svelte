@@ -5,7 +5,7 @@
     import Slider from "$lib/slider"
     import FileInput from "$lib/file-input"
     import RadioGroup from "$lib/radio-group"
-    import Label from "$lib/label"
+    import { Label, FormLabel } from "$lib/label"
     import { Select, SelectItem, SelectTrigger, SelectContent, SelectGroup, SelectLabel, SelectValue, SelectInput } from "$lib/select"
 
     const fruits = [
@@ -20,6 +20,16 @@
 <div class="flex flex-col w-1/2 mx-auto mt-36 gap-2 p-4">
     <Input placeholder="input text here" ></Input>
     <Input bordered placeholder="input text here" ></Input>
+    <FormLabel>
+      <svelte:fragment slot="label">This is default label</svelte:fragment>
+      <svelte:fragment slot="label-top-right">top right</svelte:fragment>
+      <svelte:fragment slot="label-bottom-left">bottom left</svelte:fragment>
+      <svelte:fragment slot="label-bottom-right">bottom right</svelte:fragment>
+      <Input bordered placeholder="with form label" ></Input>
+    </FormLabel>
+    <FormLabel>
+      <Input bordered placeholder="with empty form label" ></Input>
+    </FormLabel>
     <Input color="primary" placeholder="input text here" ></Input>
     <Input color="secondary" placeholder="input text here" ></Input>
     <Input color="accent" placeholder="input text here" ></Input>
