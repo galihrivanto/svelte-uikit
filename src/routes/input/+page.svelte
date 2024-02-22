@@ -195,6 +195,25 @@
       <FileInput size="lg" bordered />
       <FileInput size="sm" bordered />
 
+      <div class="flex p-4 w-full bg-base-300">
+        <Select>
+          <SelectTrigger class="w-[180px]" color="primary" ghost bordered>
+            <SelectValue placeholder="Select a fruit" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Fruits</SelectLabel>
+              {#each fruits as fruit}
+                <SelectItem value={fruit.value} label={fruit.label}
+                  >{fruit.label}</SelectItem
+                >
+              {/each}
+            </SelectGroup>
+          </SelectContent>
+          <SelectInput name="favoriteFruit" />
+        </Select>
+      </div>
+
 </div>
 
 

@@ -4,10 +4,6 @@
 	import { Color, type ColorStrings } from '$lib/enums/color.enum';
 	import { Size, type SizeStrings } from '$lib/enums/size.enum';
 
-	export let color: Color | ColorStrings = Color.Neutral;
-	export let size: Size | SizeStrings = Size.Md;
-	export let bordered: boolean = false;
-
 	type $$Props = SelectPrimitive.TriggerProps  & {
 		color?: Color | ColorStrings;
 		size?: Size | SizeStrings;
@@ -17,6 +13,10 @@
 	type $$Events = SelectPrimitive.TriggerEvents;
 
 	let className: $$Props["class"] = undefined;
+	export let color: $$Props["color"] = Color.Neutral;
+	export let size: $$Props["size"] = Size.Md;
+	export let bordered: $$Props["bordered"] = false;
+	export let ghost: $$Props["ghost"] = false;
 	export { className as class };
 </script>
 
@@ -36,7 +36,8 @@
 		classIf(size == Size.Sm, "select-sm"),
 		classIf(size == Size.Md, "select-md"),
 		classIf(size == Size.Lg, "select-lg"),
-		classIf(bordered, "select-bordered")
+		classIf(bordered == true, "select-bordered"),
+		classIf(ghost == true, "select-ghost")
 	)}
 	{...$$restProps}
 	let:builder
