@@ -1,3 +1,4 @@
+import Accordion from "./accordion";
 import AlertDialog from "./alert-dialog";
 import Alert from "./alert";
 import Avatar from "./avatar";
@@ -26,8 +27,10 @@ import Tabs from "./tabs";
 import Textarea from "./textarea";
 import Toast from "./toast";
 import Tooltip from "./tooltip";
+import Utils from "./utils";
 
 export {
+    Accordion,
     AlertDialog,
     Alert,
     Avatar,
@@ -55,5 +58,6 @@ export {
     Tabs,
     Textarea,
     Toast,
-    Tooltip
+    Tooltip,
+    Utils,
 }

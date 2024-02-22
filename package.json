@@ -18,6 +18,11 @@
       "svelte": "./dist/index.js",
       "default": "./dist/index.js"
     },
+    "./accordion": {
+      "types": "./dist/accordion.d.ts",
+      "svelte": "./dist/accordion.js",
+      "default": "./dist/accordion.js"
+    },
     "./alert": {
       "types": "./dist/alert.d.ts",
       "svelte": "./dist/alert.js",
@@ -185,12 +190,17 @@
     "./tooltip": {
       "types": "./dist/tooltip.d.ts",
       "svelte": "./dist/tooltip.js",
-      "default": "./dist/tooltip.js"      
+      "default": "./dist/tooltip.js"
     },
     "./enums/*": {
       "types": "./dist/enums/*.d.ts",
       "svelte": "./dist/enums/*.js",
-      "default": "./dist/enums/*.js"  
+      "default": "./dist/enums/*.js"
+    },
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "svelte": "./dist/utils.js",
+      "default": "./dist/utils.js"
     }
   },
   "files": [
@@ -225,13 +235,14 @@
   },
   "type": "module",
   "dependencies": {
+    "@iconify/svelte": "^3.1.4",
     "@internationalized/date": "^3.5.1",
     "bits-ui": "^0.18.0",
     "clsx": "^2.1.0",
     "cmdk-sv": "^0.0.13",
     "embla-carousel-svelte": "8.0.0-rc22",
     "formsnap": "^0.4.3",
-    "@iconify/svelte": "^3.1.4",
+    "lucide-svelte": "^0.334.0",
     "mode-watcher": "^0.2.0",
     "svelte-sonner": "^0.3.17",
     "sveltekit-superforms": "^1.13.4",
