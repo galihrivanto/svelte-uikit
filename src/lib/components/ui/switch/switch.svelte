@@ -16,6 +16,7 @@
 <input 
 	type="checkbox"
 	bind:checked
+	on:input
 	class="toggle {className}" 
 	class:toggle-primary={color == Color.Primary}
 	class:toggle-secondary={color == Color.Secondary}
