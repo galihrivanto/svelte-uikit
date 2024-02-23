@@ -65,7 +65,6 @@
 		classIf(square == true, "btn-square"),
 		classIf(circle == true, "btn-circle"),
 		classIf(block == true, "btn-block"),
-		classIf(loading == true, "btn-loading"),
 		classIf(animation == true, "btn-animation"),
 		classIf(responsive == true, "btn-responsive"),
 		classIf(link == true, "btn-link"),
@@ -77,5 +76,9 @@
 	on:click
 	on:keydown
 >
+	{#if !loading}
 	<slot />
+	{:else}
+		<span class="loading loading-spinner"></span>
+	{/if}
 </ButtonPrimitive.Root>

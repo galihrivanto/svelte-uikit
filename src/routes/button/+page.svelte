@@ -23,4 +23,5 @@
     </Button>
     <Button glass>Glass</Button>
     <Button ghost>Ghost</Button>
+    <Button loading>Loading</Button>
 </div>
