@@ -1,3 +1,6 @@
-import * as Toast from "./components/ui/sonner"
+import { Toast, Toaster} from "./components/ui/sonner"
 
-export default Toast
+export {
+    Toast,
+    Toaster
+}

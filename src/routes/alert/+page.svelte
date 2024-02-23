@@ -1,5 +1,11 @@
 <script lang="ts"> 
+    import Button from "$lib/button";
     import Alert from "$lib/alert";
+    import { Toast, Toaster } from "$lib/toast";
+
+    function showToast() {
+        Toast("test something!!")
+    }
 </script>
 
 <div class="flex flex-col w-1/2 mx-auto mt-36 gap-2">
@@ -23,4 +29,8 @@
         <svelte:fragment slot="title">New message!</svelte:fragment>
         <div class="text-xs">You have 1 unread message</div>
     </Alert>
+
+    <Button on:click={() => showToast()}>Test something!</Button>
+
+    <Toaster />
 </div>
