@@ -1,12 +1,20 @@
 <script lang="ts">
 	import { Popover as PopoverPrimitive } from "bits-ui";
 	import { cn, flyAndScale } from "$lib/utils";
+	import { createEventDispatcher } from "svelte";
+
+	const dispatch = createEventDispatcher();
 
 	type $$Props = PopoverPrimitive.ContentProps;
 	let className: $$Props["class"] = undefined;
 	export let transition: $$Props["transition"] = flyAndScale;
 	export let transitionConfig: $$Props["transitionConfig"] = undefined;
 	export { className as class };
+
+	function onContentClick(e: MouseEvent) {
+		dispatch("click", e);
+	}
+
 </script>
 
 <PopoverPrimitive.Content
@@ -18,5 +26,8 @@
 	)}
 	{...$$restProps}
 >
-	<slot />
+	<PopoverPrimitive.Arrow />
+	<div role="presentation" on:click={(e) => onContentClick(e)} class="w-full">
+		<slot />
+	</div>
 </PopoverPrimitive.Content>
