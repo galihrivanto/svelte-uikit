@@ -21,7 +21,11 @@
 
 </script>
 
-<li class="{disabled ? "disabled": ""}">
+<li 
+    role="presentation"
+    class="{disabled ? "disabled": ""}"
+    on:click|preventDefault={onClick} 
+>
     <div 
         data-tip={iconOnly ? tooltip : ""}
         class="{tooltip != "" ? "tooltip" : ""}"
@@ -37,7 +41,7 @@
         class:tooltip-left={tooltipPosition == Position.Left}
         class:tooltip-right={tooltipPosition == Position.Right}
     >    
-        <a href="." on:click|preventDefault={onClick} class="flex flex-row gap-4">
+        <a href="." class="flex flex-row gap-4">
             {#if icon }
             <Icon icon={icon} class="text-xl" />
             {/if}
