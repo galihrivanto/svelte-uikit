@@ -3,22 +3,19 @@
     import { linear } from 'svelte/easing';
     import { Position, type PositionStrings } from ".";
     import { Loading } from "../loading";
-    import { Button } from "../button"
+    import { Button } from "../button";
+    import { Size, type SizeStrings} from "$lib/enums/size.enum";
     import Icon from "@iconify/svelte";
 
     export let open: boolean = false;
     export let delay: number = 50;
     export let duration: number = 300;
     export let position: Position | PositionStrings = Position.Right;
+    export let buttonSize: Size | SizeStrings = Size.Md;
     let visible: boolean = false;
 
     const classes = $$props.class ? $$props.class : '';
     const {class, ...restProps} = $$restProps;
-
-    $: {
-        visible;
-        console.log("visible?", visible);
-    }
 
 </script>
 
@@ -39,13 +36,13 @@
         transition:slide={{delay: delay, duration: duration, easing: linear, axis: 'x'}}  
         on:introend={() => { visible = true }}
         on:outrostart={() => { visible = false }}
-        class="bg-base-100 absolute inset-y-0 h-full w-1/2 pt-8 {classes}"
+        class="bg-base-100 absolute inset-y-0 h-full w-1/2 pb-16 {classes}"
         class:right-0={position == Position.Right}
         class:left-0={position == Position.Left}
     >        
         <Button 
-            circle size="xs" 
-            class="absolute top-2 {position == Position.Left ? "right-2" : "left-2"}"
+            circle size={buttonSize} 
+            class="absolute bottom-2 {position == Position.Left ? "right-2" : "left-2"}"
             on:click={() => { open = false }}
         >
             <Icon icon={position == Position.Left ? "mdi:chevron-left" : "mdi:chevron-right"} class="w-4 h-4" />
