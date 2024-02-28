@@ -6,6 +6,9 @@
     import { Button } from "../button";
     import { Size, type SizeStrings} from "$lib/enums/size.enum";
     import Icon from "@iconify/svelte";
+    import { createEventDispatcher } from 'svelte';
+
+    const dispatch = createEventDispatcher();
 
     export let open: boolean = false;
     export let delay: number = 50;
@@ -16,6 +19,11 @@
 
     const classes = $$props.class ? $$props.class : '';
     const {class, ...restProps} = $$restProps;
+
+    function close() {
+        open = false;
+        dispatch("close")
+    }
 
 </script>
 
@@ -43,7 +51,7 @@
         <Button 
             circle size={buttonSize} 
             class="absolute bottom-2 {position == Position.Left ? "right-2" : "left-2"}"
-            on:click={() => { open = false }}
+            on:click={() => close()}
         >
             <Icon icon={position == Position.Left ? "mdi:chevron-left" : "mdi:chevron-right"} class="w-4 h-4" />
         </Button>

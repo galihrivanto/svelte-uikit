@@ -14,6 +14,7 @@
         duration={500}
         style="width:{size}px; height:{size}px;" 
         class="z-0 border border-primary"
+        on:close={() => { alert("drawer closed!!") }}
     >
         <div class="background z-0" style="width:{size}px; height:{size}px;" on:wheel={(e)=>{ e.preventDefault()}}>
         </div>
