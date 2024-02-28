@@ -34,7 +34,7 @@
 >
     <div class="w-full h-full"
         role="presentation"
-        on:click={() => { open = false }}
+        on:click={() => { close() }}
     >
         <slot />
     </div>
