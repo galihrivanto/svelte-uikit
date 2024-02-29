@@ -9,12 +9,14 @@
 	export let size: Size | SizeStrings = Size.Md;
 	export let bordered: boolean = false;
 	export let ghost: boolean = false;
+	export let error: boolean = false;
 
 	type $$Props = HTMLInputAttributes & {
 		color?: Color | ColorStrings;
 		size?: Size | SizeStrings;
 		bordered?: boolean;
 		ghost?: boolean;
+		error?: boolean;
 	};
 	type $$Events = InputEvents;
 
@@ -42,7 +44,7 @@
 		class:input-info={color == Color.Info}
 		class:input-success={color == Color.Success}
 		class:input-warning={color == Color.Warning}
-		class:input-error={color == Color.Error}
+		class:input-error={color == Color.Error || error}
 		class:input-xs={size == Size.Xs}
 		class:input-sm={size == Size.Sm}
 		class:input-md={size == Size.Md}

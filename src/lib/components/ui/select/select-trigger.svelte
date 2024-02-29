@@ -9,6 +9,7 @@
 		size?: Size | SizeStrings;
 		bordered?: boolean;
 		ghost?: boolean;
+		error?: boolean;
 	};
 	type $$Events = SelectPrimitive.TriggerEvents;
 
@@ -17,6 +18,7 @@
 	export let size: $$Props["size"] = Size.Md;
 	export let bordered: $$Props["bordered"] = false;
 	export let ghost: $$Props["ghost"] = false;
+	export let error: $$Props["error"] = false;
 	export { className as class };
 </script>
 
@@ -31,7 +33,7 @@
 		classIf(color == Color.Success, "select-success"),
 		classIf(color == Color.Info, "select-info"),
 		classIf(color == Color.Warning, "select-warning"),
-		classIf(color == Color.Error, "select-error"),
+		classIf(color == Color.Error || error == true, "select-error"),
 		classIf(size == Size.Xs, "select-xs"),
 		classIf(size == Size.Sm, "select-sm"),
 		classIf(size == Size.Md, "select-md"),
