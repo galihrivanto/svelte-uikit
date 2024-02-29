@@ -16,7 +16,7 @@
 
     $: if (errors && key && key in errors) {
         is_error = true 
-        message = errors[key].message
+        message = errors[key].error
     }
 
 </script>
