@@ -201,6 +201,11 @@
       "types": "./dist/utils.d.ts",
       "svelte": "./dist/utils.js",
       "default": "./dist/utils.js"
+    },
+    "./xform": {
+      "types": "./dist/xform.d.ts",
+      "svelte": "./dist/xform.js",
+      "default": "./dist/xform.js"
     }
   },
   "files": [
