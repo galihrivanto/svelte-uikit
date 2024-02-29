@@ -1,8 +1,8 @@
 import Form from "./form.svelte";
 
 interface ErrorField {
-    key: string;
-    message: string ;
+    field: string;
+    error: string ;
 }
 type Data = Record<string, any>;
 type ErrorBags = Record<string, ErrorField>;
