@@ -12,15 +12,18 @@
             console.log("on submit")
 
             setTimeout(() => {
-                let errors: ErrorBags = {
-                    "input1": {
-                        key: "input1",
-                        message: "this input is error"
-                    },
-                    "input2": {
-                        key: "input2",
-                        message: "this input is also error"
-                    }
+                let errors = {
+                    message: "Validation error",
+                    fields: [
+                        {
+                            field: "input1",
+                            error: "this input is error"
+                        },
+                        {
+                            field: "input2",
+                            error: "this input is also error"
+                        }
+                    ]
                 }
 
                 console.log("reject", errors)

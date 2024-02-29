@@ -7,8 +7,12 @@ interface ErrorField {
 type Data = Record<string, any>;
 type ErrorBags = Record<string, ErrorField>;
 interface ApiError {
-    message: string;
-    fields: ErrorField[]
+    response: {
+        data: {
+            message: string;
+            fields: ErrorField[]
+        }
+    }
 }
 
 interface Result {
