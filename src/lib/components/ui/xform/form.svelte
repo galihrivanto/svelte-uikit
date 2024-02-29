@@ -1,7 +1,8 @@
 <script lang="ts">
-    import type { Result, ErrorBags } from ".";
+    import type { Result, ErrorBags, ApiError } from ".";
 
     let errors: ErrorBags = {};
+    let rawErrors: []
     let busy: boolean = false;
     let submitCallback: () => Promise<Result>;
 
@@ -18,7 +19,11 @@
             console.log("result: ", result)
         } catch (e) 
         {
-            errors = e as ErrorBags;
+            errors = {}
+            const apiError = e as ApiError;
+            for (const f of apiError.fields) {
+                errors[f.field] = f
+            }
         }
         busy = false 
     }

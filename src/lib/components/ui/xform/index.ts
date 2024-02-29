@@ -6,6 +6,10 @@ interface ErrorField {
 }
 type Data = Record<string, any>;
 type ErrorBags = Record<string, ErrorField>;
+interface ApiError {
+    message: string;
+    fields: ErrorField[]
+}
 
 interface Result {
     message:  string;
@@ -24,5 +28,6 @@ export {
     type ErrorBags,
     type Result,
     type IForm,
+    type ApiError,
     Form
 }
