@@ -6,10 +6,11 @@ interface ErrorField {
 }
 type Data = Record<string, any>;
 type ErrorBags = Record<string, ErrorField>;
+
 interface ApiError {
     response: {
         data: {
-            message: string;
+            error: string;
             fields: ErrorField[]
         }
     }
@@ -22,9 +23,8 @@ interface Result {
     is_error: boolean;
 }
 
-
-interface IForm {
-    registerSubmit(callback: () => Promise<Result>): void;
+interface Submit {
+    () : Promise<void>;
 }
 
 export {
@@ -32,7 +32,7 @@ export {
     type ErrorField,
     type ErrorBags,
     type Result,
-    type IForm,
     type ApiError,
+    type Submit,
     Form
 }
