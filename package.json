@@ -33,6 +33,11 @@
       "svelte": "./dist/alert-dialog.js",
       "default": "./dist/alert-dialog.js"
     },
+    "./avatar": {
+      "types": "./dist/avatar.d.ts",
+      "svelte": "./dist/avatar.js",
+      "default": "./dist/avatar.js"
+    },
     "./badge": {
       "types": "./dist/badge.d.ts",
       "svelte": "./dist/badge.js",
