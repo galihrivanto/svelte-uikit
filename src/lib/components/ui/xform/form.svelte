@@ -2,7 +2,6 @@
     import type { Result, ErrorBags, ApiError } from ".";
 
     let errors: ErrorBags = {};
-    let rawErrors: []
     let busy: boolean = false;
     let submitCallback: () => Promise<Result>;
 

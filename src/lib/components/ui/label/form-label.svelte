@@ -15,13 +15,16 @@
     let is_error: boolean = false 
 
     $: if (errors && key) {
+        console.log("label :", errors, key, key in errors)
         if (key in errors) {
             is_error = true 
             message = errors[key].error
-        } {
+        } else {
             is_error = false
             message = ""
         }
+
+        console.log(is_error, message)
     }
 
 </script>

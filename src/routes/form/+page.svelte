@@ -1,64 +1,55 @@
 <script lang="ts">
-    import { Form, type Result, type ErrorBags, type IForm } from "$lib/xform";
+    import { type Result, type ErrorBags } from "$lib/xform";
     import Button from "$lib/button";
     import Input from "$lib/input";
     import { FormLabel } from "$lib/label";
-    import { onMount } from "svelte";
+    let errors: ErrorBags = {}
+    let busy: boolean = false 
 
-    let form: IForm;
 
-    async function submit(): Promise<Result> {
-        return new Promise((resolve,reject) => {          
-            console.log("on submit")
-
+    async function submit(): Promise<void> {            
+        console.log("on submit")
+        busy = true 
+        return new Promise((resolve, reject) => {
             setTimeout(() => {
-                let errors = {
-                    message: "Validation error",
-                    fields: [
-                        {
-                            field: "input1",
-                            error: "this input is error"
-                        },
-                        {
-                            field: "input2",
-                            error: "this input is also error"
-                        }
-                    ]
+                errors = {
+                    "input1": {
+                        field: "input1",
+                        error: "this input is error"
+                    },
+                    "input2":     {
+                        field: "input2",
+                        error: "this input is also error"
+                    }
                 }
 
                 console.log("reject", errors)
-
                 reject(errors)
+                busy = false 
 
             }, 5000)
-        })        
+        })
     }
-
-    onMount(() => {
-        form.registerSubmit(submit);
-    })
 
 </script>
 
 <div class="flex flex-col w-1/2 mx-auto mt-36 gap-2">
-    <Form bind:this={form} >
-        <svelte:fragment let:busy let:errors>
-            <FormLabel {errors} key="input1">
-                <svelte:fragment slot="label">Test Input</svelte:fragment>
-                <svelte:fragment let:error>
-                    <Input  bordered disabled={busy} {error}/>
-                </svelte:fragment>
-            </FormLabel>
+    <form on:submit={() => submit()}>
+        <FormLabel {errors} key="input1">
+            <svelte:fragment slot="label">Test Input</svelte:fragment>
+            <svelte:fragment let:error>
+                <Input  bordered disabled={busy} {error}/>
+            </svelte:fragment>
+        </FormLabel>
 
-            <FormLabel {errors} key="input2">
-                <svelte:fragment slot="label">Test Input</svelte:fragment>
-                <svelte:fragment let:error>
-                    <Input  bordered disabled={busy} {error} />
-                </svelte:fragment>
-            </FormLabel>
-        </svelte:fragment>
-        <svelte:fragment slot="action" let:busy>
-            <Button type="submit" color="primary" loading={busy}>Click Me!!</Button>
-        </svelte:fragment>
-    </Form>
+        <FormLabel {errors} key="input2">
+            <svelte:fragment slot="label">Test Input</svelte:fragment>
+            <svelte:fragment let:error>
+                <Input  bordered disabled={busy} {error} />
+            </svelte:fragment>
+        </FormLabel>
+    
+        <Button type="submit" color="primary" loading={busy}>Click Me!!</Button>
+
+    </form>
 </div>
