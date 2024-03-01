@@ -10,11 +10,13 @@
        submitCallback = callback;
     }
 
-    async function onSubmit() {
+    async function doSubmit() {
         busy = true 
         errors = {}
 
         try {
+            await submitCallback()
+
             const result = await submitCallback()
             console.log("result: ", result)
         } catch (e) 
@@ -25,12 +27,13 @@
                 errors[f.field] = f
             }
         }
+
         busy = false 
     }
 
 </script>
 
-<form class="flex flex-col gap-4" on:submit={() => onSubmit()}>
+<form class="flex flex-col gap-4" on:submit={() => doSubmit()}>
     <div class="flex flex-col gap-2">
         <slot {errors} {busy} />
     </div>

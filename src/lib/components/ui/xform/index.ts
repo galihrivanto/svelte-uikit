@@ -22,6 +22,7 @@ interface Result {
     is_error: boolean;
 }
 
+
 interface IForm {
     registerSubmit(callback: () => Promise<Result>): void;
 }

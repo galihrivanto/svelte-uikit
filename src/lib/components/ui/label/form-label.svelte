@@ -14,9 +14,14 @@
     let message: string = ""
     let is_error: boolean = false 
 
-    $: if (errors && key && key in errors) {
-        is_error = true 
-        message = errors[key].error
+    $: if (errors && key) {
+        if (key in errors) {
+            is_error = true 
+            message = errors[key].error
+        } {
+            is_error = false
+            message = ""
+        }
     }
 
 </script>
