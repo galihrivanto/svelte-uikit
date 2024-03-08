@@ -9,7 +9,7 @@
     let is_error: boolean = false 
     let message: string = ""
     let errors: ErrorBags = {}
-    let busy: boolean = false
+    export let busy: boolean = false
     export let submit: Submit
 
     async function doSubmit() {
