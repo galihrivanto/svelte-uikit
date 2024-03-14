@@ -10,4 +10,6 @@
     <Progress color="info" max={100} value={80}></Progress>
     <Progress color="warning" max={100} value={90} class="h-1"></Progress>
     <Progress color="error" max={100} value={70} class="h-4"></Progress>
+    <Progress color="error"></Progress>
+    <progress class="progress w-56"></progress>
 </div>

@@ -6,7 +6,7 @@
     import FileInput from "$lib/file-input"
     import RadioGroup from "$lib/radio-group"
     import { Label, FormLabel } from "$lib/label"
-    import { Select, SelectItem, SelectTrigger, SelectContent, SelectGroup, SelectLabel, SelectValue, SelectInput } from "$lib/select"
+    import { XSelect, Select, SelectItem, SelectTrigger, SelectContent, SelectGroup, SelectLabel, SelectValue, SelectInput } from "$lib/select"
 
     const fruits = [
         { value: "apple", label: "Apple" },
@@ -15,6 +15,11 @@
         { value: "grapes", label: "Grapes" },
         { value: "pineapple", label: "Pineapple" }
     ];
+
+    let option1: string;
+    let option2: string;
+    let optionx: string;
+
 </script>
 
 <div class="flex flex-col w-1/2 mx-auto mt-36 gap-2 p-4">
@@ -97,7 +102,20 @@
         <SelectInput name="favoriteFruit" />
     </Select>
 
-    <Select>
+    <p>option x: {optionx}</p>
+    <XSelect bind:value={optionx} bordered class="w-[180px]" placeholder="Select a fruit">        
+        <SelectGroup>
+          <SelectLabel>Fruits</SelectLabel>
+          {#each fruits as fruit}
+              <SelectItem value={fruit.value} label={fruit.label}
+              >{fruit.label}</SelectItem
+              >
+          {/each}
+        </SelectGroup>
+    </XSelect>
+
+    <p>option 1: {JSON.stringify(option1)}</p>
+    <Select bind:selected={option1}>
         <SelectTrigger class="w-[180px]" bordered>
             <SelectValue placeholder="Select a fruit" />
         </SelectTrigger>
@@ -114,7 +132,8 @@
         <SelectInput name="favoriteFruit" />
     </Select>
 
-    <Select>
+    <p>option 2: {JSON.stringify(option2)}</p>
+    <Select bind:selected={option2}>
         <SelectTrigger class="w-[180px]" size="sm" bordered>
             <SelectValue placeholder="Select a fruit" />
         </SelectTrigger>
