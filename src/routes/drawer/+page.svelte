@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { noSlideTransition } from "$lib/components/ui/drawer";
     import Drawer from "$lib/drawer";
 
     let openDrawer1:boolean = false;
@@ -11,6 +12,7 @@
     <button class="btn" on:click={() => { openDrawer1 = !openDrawer1 }}>Open Drawer</button>
     <Drawer 
         bind:open={openDrawer1} 
+        transition={noSlideTransition}
         duration={500}
         style="width:{size}px; height:{size}px;" 
         class="z-0 border border-primary"

@@ -12,7 +12,7 @@
 	export let backdrop: $$Props["backdrop"] = false;
 	export let transition: $$Props["transition"] = flyAndScale;
 	export let transitionConfig: $$Props["transitionConfig"] = {
-		duration: 200,
+		duration: 5000,
 	};
 	export { className as class };
 </script>

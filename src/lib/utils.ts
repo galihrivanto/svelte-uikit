@@ -1,8 +1,7 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { cubicOut } from "svelte/easing";
-import type { TransitionConfig } from "svelte/transition";
-import { boolean } from "zod";
+import { cubicOut, linear } from "svelte/easing";
+import type { SlideParams, TransitionConfig } from "svelte/transition";
 
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
@@ -61,6 +60,26 @@ export const flyAndScale = (
         easing: cubicOut
     };
 };
+
+
+export const horizontalSlide = (
+    node: Element,
+    params: SlideParams = { delay: 50, duration: 300, axis: 'x' },
+): TransitionConfig => {
+    return {
+        delay: params.delay ?? 50,
+        duration: params.duration ?? 300,
+        easing: linear,
+        axis: params.axis ?? 'x'
+    }
+}
+
+export const noTransition = (
+    node: Element,
+    params: {}
+): TransitionConfig => {
+    return {}
+}
 
 export function classIf(cond: boolean, className: string): string {
     return cond? className : ""

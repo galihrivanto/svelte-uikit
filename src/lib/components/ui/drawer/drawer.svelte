@@ -1,7 +1,7 @@
 <script lang="ts">
     import { slide } from 'svelte/transition';
     import { linear } from 'svelte/easing';
-    import { Position, type PositionStrings } from ".";
+    import { Position, slideTransition, type PositionStrings, type TransitionConfig } from ".";
     import { Loading } from "../loading";
     import { Button } from "../button";
     import { Size, type SizeStrings} from "$lib/enums/size.enum";
@@ -13,6 +13,7 @@
     export let open: boolean = false;
     export let delay: number = 50;
     export let duration: number = 300;
+    export let transition: TransitionConfig = slideTransition(delay, duration);
     export let position: Position | PositionStrings = Position.Right;
     export let buttonSize: Size | SizeStrings = Size.Md;
     let visible: boolean = false;
@@ -41,7 +42,7 @@
 
     {#if open}
     <div 
-        transition:slide={{delay: delay, duration: duration, easing: linear, axis: 'x'}}  
+        transition:slide={ transition }  
         on:introend={() => { visible = true }}
         on:outrostart={() => { visible = false }}
         class="bg-base-100 absolute inset-y-0 h-full w-1/2 pb-16 {classes}"
