@@ -1,3 +1,7 @@
-import { Drawer } from "./components/ui/drawer";
+import { Drawer, noSlideTransition, slideTransition } from "./components/ui/drawer";
 
-export default Drawer;
+export {
+    Drawer,
+    noSlideTransition,
+    slideTransition,
+}
