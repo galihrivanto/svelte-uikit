@@ -21,12 +21,24 @@
     const classes = $$props.class ? $$props.class : '';
     const {class, ...restProps} = $$restProps;
 
+    function onKeyUp(event: KeyboardEvent) {
+        if (!open) return;
+
+        if (event.key === 'Escape') {
+            open = false ;
+        }
+    }
+
     function close() {
         open = false;
         dispatch("close")
     }
 
 </script>
+
+<svelte:window
+    on:keyup={onKeyUp}
+/>
 
 <div 
     class="relative {classes}" 

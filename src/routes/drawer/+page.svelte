@@ -1,6 +1,6 @@
 <script lang="ts">
     import { noSlideTransition } from "$lib/components/ui/drawer";
-    import Drawer from "$lib/drawer";
+    import { Drawer } from "$lib/drawer";
 
     let openDrawer1:boolean = false;
     let openDrawer2:boolean = false;
