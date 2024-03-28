@@ -25,7 +25,7 @@
         if (!open) return;
 
         if (event.key === 'Escape') {
-            open = false ;
+            close();
         }
     }
 
