@@ -18,7 +18,8 @@
 
     let option1: string;
     let option2: string;
-    let optionx: string;
+    let optionx: string = "grapes";
+    let disabled: boolean = true;
 
 </script>
 
@@ -103,7 +104,7 @@
     </Select>
 
     <p>option x: {optionx}</p>
-    <XSelect bind:value={optionx} bordered class="w-[180px]" placeholder="Select a fruit">        
+    <XSelect bind:value={optionx} bordered class="w-[180px]" placeholder="Select a fruit" {disabled}>        
         <SelectGroup>
           <SelectLabel>Fruits</SelectLabel>
           {#each fruits as fruit}
